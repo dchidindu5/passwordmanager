@@ -29,21 +29,17 @@ void erase(){
 	}
 	else 
 		cout<< "Unable to erase file " <<endl;
-	
 }
 
 void save_vector(std::string &website, string& useracc, string& newpass){
 	
-	// writing date-time; & an extra '0' before every start which is used during decoding
+	// writing date-time; & an extra '0' before every start of writing
     
     FILE *file = fopen(FILE_NAME, "a");
     time_t date = time(NULL);
     fprintf(file, "\n%s\t", ctime(&date));
     fclose(file);
 	std::ofstream out(FILE_NAME, ios_base::out | ios_base::app);
-	 //out << "---------------------------------------\n";
-	//	out << " Username 	 		Password\n";
-	//	out << "---------------------------------------\n";
     
 	if (out.good()){
 		
@@ -88,18 +84,19 @@ string insert_userpwd(std::string &website, string &useracc, string &newpass){
 	
 	//std::string website;
 	std::cout << "Enter website name: ";
-           
-            std::cin >> website;
+           std::cin >> website;
+
+	//Username of account
             
 	cout <<" Enter an account name: " << '\n';
 	cin>> useracc;
 	//getline(cin, useracc); 
-	
+
+	// Password entered by the user
 	cout <<" Enter a password: " <<endl;
 	//cin.getline(newpass);
 	//getline(cin, newpass);
 	cin>> newpass;
-	
 	
 	return website;	
 	return useracc;
@@ -108,7 +105,6 @@ string insert_userpwd(std::string &website, string &useracc, string &newpass){
 }
 
 char opt(){
-	
 	char option;
 	system("color 0F");
 	
