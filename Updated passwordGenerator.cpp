@@ -12,7 +12,7 @@
 #include <cstdlib>
 #include <assert.h>
 
-//ddd
+//Seg fault somewhere
 
 /*#include <ctime>
 #include <cctype>
@@ -796,4 +796,5 @@ uint8_t chartohex(char c) {
   else //if (c >= 'A' && c <= 'F')
     res = c - 'A' + 10;
   return res;
+
 }
